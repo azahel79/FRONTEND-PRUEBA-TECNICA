@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+
+@import "tailwindcss";
+
+@theme {
+  /* Definición de la paleta NeonTask imitando tu imagen */
+  --color-neon-bg: #0A1016;
+  --color-neon-card: #161F27;
+  --color-neon-cyan: #55E6ED;
+  --color-neon-border: #1A2530;
+  --color-neon-text-dim: #6C7A86;
+  
+  /* Fuentes y espaciados personalizados */
+  --font-sans: "Inter", "system-ui", sans-serif;
+  --letter-spacing-neon: 0.3em;
+}
+
+/* Estilos globales base */
+@layer base {
+  body {
+    @apply bg-neon-bg text-white antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04";
+  }
+
+  /* Scrollbar personalizada para que combine con el diseño oscuro */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-neon-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-neon-border);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-neon-text-dim);
+  }
+}
+
+/* Utilidades personalizadas para efectos de la imagen */
+@layer utilities {
+  .text-neon-glow {
+    text-shadow: 0 0 10px rgba(85, 230, 237, 0.3);
+  }
+  
+  .border-gradient-neon {
+    border-image: linear-gradient(to right, #55E6ED, transparent) 1;
+  }
+}
+
+
+/* Scroll personalizado para la lista de tareas */
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #00ffcc33 #1a1a2e;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: #1a1a2e;
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #00ffcc33;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #00ffcc66;
+}
+
+/* Para Firefox */
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #00ffcc33 #1a1a2e;
+}
